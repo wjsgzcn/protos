@@ -5,21 +5,21 @@ option csharp_namespace = "HomeProperty.Service";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
-import "common.proto";
+import "Protos/common.proto";
 
 package repare;
 
 service Repare {
-    rpc List (ListRequest) returns (ListResponse);
+    rpc List (RepareListRequest) returns (RepareListResponse);
     rpc CreateOrUpdate (RepareMsg) returns (common.CommonResponse);
     rpc Delete (RepareMsg) returns (common.CommonResponse);
 }
 
-message ListRequest{
+message RepareListRequest{
 
 }
 
-message ListResponse{
+message RepareListResponse{
     int32 count = 1;
     repeated RepareMsg items = 2;
 }
