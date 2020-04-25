@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "HomeProperty.Service";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "common.proto";
+
+package location;
+
+service Location {
+    rpc List (ListRequest) returns (ListResponse);
+    rpc CreateOrUpdate (LocationMsg) returns (common.CommonResponse);
+    rpc Delete (LocationMsg) returns (common.CommonResponse);
+}
+
+message ListRequest{
+
+}
+
+message ListResponse{
+    int32 count = 1;
+    repeated LocationMsg items = 2;
+}
+
+message LocationMsg {
+  int32 id = 1;
+  string room = 2;
+  string container = 3;
+  string details = 4;
+}
+

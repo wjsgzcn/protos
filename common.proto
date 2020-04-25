@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "HomeProperty.Service";
+
+package common;
+
+message CommonResponse{
+    bool success = 1;
+    int32 count = 2;
+    string msg = 3;
+}
